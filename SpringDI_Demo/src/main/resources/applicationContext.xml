@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Constructor Injection -->
+    <bean id="myBasketBallCoach"
+          class = "org.example.Coach.BaseballCoach">
+        <constructor-arg ref="myHappyFortune"/>
+    </bean>
+<!--    Setter Injection and Literal Injection-->
+    <bean id="myCricketCoach"
+          class = "org.example.Coach.CricketCoach">
+        <property name="fortune" ref="myHappyFortune"/>
+        <property name="email" value="sharma.udit16@gmail.com"/>
+        <property name="team" value="Royal Challengers Bangalore"/>
+    </bean>
+    <bean id="myHappyFortune"
+          class = "org.example.Fortune.HappyFortune">
+    </bean>
+
+
+
+</beans>
